@@ -1,7 +1,7 @@
 "use client"
 import { useTranslations } from "next-intl"
 import { LocaleSelector } from "./locale-selector"
-import { ThemeSelector } from "./theme-selector"
+import { ThemeButton } from "./theme-button"
 
 const SECTIONS = [
   { key: "home", id: "home" },
@@ -44,7 +44,7 @@ export default function Header() {
 
         <div className="flex items-center gap-4">
           <LocaleSelector />
-          <ThemeSelector />
+          <ThemeButton />
         </div>
       </nav>
     </header>
