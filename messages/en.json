@@ -1,8 +1,24 @@
 {
-  "HomePage": {
-    "title": "To get started, edit the page.tsx file.",
-    "description": "Looking for a starting point or more instructions? Head over to <templates>Templates</templates> or the <learning>Learning</learning> center.",
-    "deployButton": "Deploy Now",
-    "docButton": "Documentation"
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "homeSection": {
+    "title": "Hi, I'm",
+    "descriptions": "I build modern and user-friendly web applications with React, Next.js and TypeScript."
+  },
+  "aboutSection": {
+    "title": "About Me",
+    "descriptions": "I'm a passionate frontend developer with experience in creating modern web applications."
+  },
+  "projectsSection": {
+    "title": "Projects",
+    "descriptions": "Here are some of the projects I've worked on:"
+  },
+  "contactSection": {
+    "title": "Contact Me",
+    "descriptions": "Feel free to reach out if you have any questions or just want to say hello!"
   }
 }

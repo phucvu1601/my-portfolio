@@ -1,8 +1,28 @@
 {
-  "HomePage": {
-    "title": "Để bắt đầu, sửa file page.tsx",
-    "description": "Bạn đang tìm điểm bắt đầu hoặc hướng dẫn thêm? Hãy truy cập <templates>Mẫu</templates> hoặc <learning>Trung tâm học tập</learning> để tìm hiểu.",
-    "deployButton": "Triển khai",
-    "docButton": "Tài liệu"
+  "header": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "projects": "Dự án",
+    "contact": "Liên hệ"
+  },
+
+  "homeSection": {
+    "title": "Xin chào, tôi là",
+    "descriptions": "Tôi xây dựng các ứng dụng web hiện đại và thân thiện với người dùng bằng React, Next.js và TypeScript."
+  },
+
+  "aboutSection": {
+    "title": "Về tôi",
+    "descriptions": "Tôi là một lập trình viên Frontend đam mê công việc, với kinh nghiệm phát triển các ứng dụng web hiện đại."
+  },
+
+  "projectsSection": {
+    "title": "Dự án",
+    "descriptions": "Dưới đây là một số dự án tôi đã thực hiện:"
+  },
+
+  "contactSection": {
+    "title": "Liên hệ với tôi",
+    "descriptions": "Hãy liên hệ với tôi nếu bạn có bất kỳ câu hỏi nào hoặc đơn giản là muốn gửi lời chào!"
   }
 }
