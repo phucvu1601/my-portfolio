@@ -1,4 +1,3 @@
-"use client"
 import Header from "@/components/header/header"
 import About from "@/features/components/about"
 import Contact from "@/features/components/contact"
