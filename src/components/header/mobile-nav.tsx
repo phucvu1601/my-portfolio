@@ -68,8 +68,8 @@ export function MobileNav({
                 className={cn(
                   "flex h-11 items-center rounded-lg px-4 text-left text-base transition-all duration-400 animate-in fade-in slide-in-from-right-2 fill-mode-backwards",
                   isActive
-                    ? "text-primary font-bold"
-                    : "text-muted-foreground font-medium hover:bg-accent hover:text-foreground hover:translate-x-1",
+                    ? "text-brand font-bold"
+                    : "text-brand/40 font-medium hover:bg-accent hover:text-brand/80 hover:translate-x-1",
                 )}
               >
                 <span>{t(section.key)}</span>
