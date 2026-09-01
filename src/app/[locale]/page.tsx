@@ -1,9 +1,9 @@
 import BackgroundGlow from "@/components/containers/background-glow"
 import Header from "@/components/header/header"
-import About from "@/features/components/about"
-import Contact from "@/features/components/contact"
-import Home from "@/features/components/home"
-import Projects from "@/features/components/projects"
+import About from "@/components/sections/about"
+import Contact from "@/components/sections/contact"
+import Home from "@/components/sections/home"
+import Projects from "@/components/sections/projects"
 
 export default function Portfolio() {
   return (

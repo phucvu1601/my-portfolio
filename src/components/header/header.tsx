@@ -1,5 +1,6 @@
 "use client"
 import { useTranslations } from "next-intl"
+import { useActiveSection } from "@/hooks/use-active-section" // Thay đổi đường dẫn import cho đúng
 import { LocaleSelector } from "./locale-selector"
 import { MobileNav } from "./mobile-nav"
 import { ThemeButton } from "./theme-button"
@@ -13,6 +14,10 @@ const SECTIONS = [
 
 export default function Header() {
   const t = useTranslations("header")
+
+  // Lấy danh sách IDs và truyền vào Hook
+  const sectionIds = SECTIONS.map((s) => s.id)
+  const activeSection = useActiveSection(sectionIds, "home")
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
@@ -33,24 +38,34 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-6 md:flex">
-          {SECTIONS.map((section) => (
-            <button
-              key={section.id}
-              type="button"
-              onClick={() => scrollToSection(section.id)}
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              {t(section.key)}
-            </button>
-          ))}
+          {SECTIONS.map((section) => {
+            const isActive = activeSection === section.id
+            return (
+              <button
+                key={section.id}
+                type="button"
+                onClick={() => scrollToSection(section.id)}
+                className={`text-sm font-medium transition-colors ${
+                  isActive
+                    ? "text-primary font-semibold underline underline-offset-4"
+                    : "text-muted-foreground hover:text-primary"
+                }`}
+              >
+                {t(section.key)}
+              </button>
+            )
+          })}
         </div>
 
         {/* Controls */}
         <div className="flex items-center gap-2 sm:gap-4">
           <LocaleSelector />
           <ThemeButton />
-          {/* Mobile Navigation */}
-          <MobileNav sections={SECTIONS} onScrollToSection={scrollToSection} />
+          <MobileNav
+            sections={SECTIONS}
+            activeSection={activeSection}
+            onScrollToSection={scrollToSection}
+          />
         </div>
       </nav>
     </header>

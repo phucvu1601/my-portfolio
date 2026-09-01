@@ -13,6 +13,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import { cn } from "@/lib/utils"
 
 interface Section {
   key: string
@@ -21,10 +22,15 @@ interface Section {
 
 interface MobileNavProps {
   sections: Section[]
+  activeSection?: string
   onScrollToSection: (id: string) => void
 }
 
-export function MobileNav({ sections, onScrollToSection }: MobileNavProps) {
+export function MobileNav({
+  sections,
+  activeSection,
+  onScrollToSection,
+}: MobileNavProps) {
   const t = useTranslations("header")
   const [open, setOpen] = useState(false)
 
@@ -41,24 +47,35 @@ export function MobileNav({ sections, onScrollToSection }: MobileNavProps) {
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-65 sm:w-75">
+      <SheetContent side="right" className="w-65 sm:w-75 bg-bg-glow">
         <SheetHeader>
           <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
           <SheetDescription className="sr-only">
             Mobile navigation options
           </SheetDescription>
         </SheetHeader>
-        <div className="mt-8 flex flex-col gap-4">
-          {sections.map((section) => (
-            <button
-              key={section.id}
-              type="button"
-              onClick={() => handleSelect(section.id)}
-              className="flex h-10 items-center rounded-md px-3 text-left text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-            >
-              {t(section.key)}
-            </button>
-          ))}
+
+        <div className="mt-8 flex flex-col gap-2">
+          {sections.map((section, index) => {
+            const isActive = activeSection === section.id
+
+            return (
+              <button
+                key={section.id}
+                type="button"
+                onClick={() => handleSelect(section.id)}
+                style={{ animationDelay: `${150 + index * 80}ms` }}
+                className={cn(
+                  "flex h-11 items-center rounded-lg px-4 text-left text-base transition-all duration-400 animate-in fade-in slide-in-from-right-2 fill-mode-backwards",
+                  isActive
+                    ? "text-primary font-bold"
+                    : "text-muted-foreground font-medium hover:bg-accent hover:text-foreground hover:translate-x-1",
+                )}
+              >
+                <span>{t(section.key)}</span>
+              </button>
+            )
+          })}
         </div>
       </SheetContent>
     </Sheet>
