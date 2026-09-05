@@ -1,10 +1,10 @@
 "use client"
 import { useTranslations } from "next-intl"
+import { LocaleSelector } from "@/components/common/locale-selector"
+import { MobileNav } from "@/components/common/mobile-nav"
+import { ThemeButton } from "@/components/common/theme-button"
 import { useActiveSection } from "@/hooks/use-active-section"
 import { cn } from "@/lib/utils"
-import { LocaleSelector } from "./locale-selector"
-import { MobileNav } from "./mobile-nav"
-import { ThemeButton } from "./theme-button"
 
 const SECTIONS = [
   { key: "home", id: "home" },
