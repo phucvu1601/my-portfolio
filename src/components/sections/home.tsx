@@ -1,5 +1,8 @@
 "use client"
 
+import avatar from "@public/lanyard/avatar.jpg"
+import backImageDark from "@public/lanyard/back-image-dark.jpg"
+import backImageLight from "@public/lanyard/back-image-light.jpg"
 import dynamic from "next/dynamic"
 import { useTranslations } from "next-intl"
 import { useTheme } from "next-themes"
@@ -24,12 +27,8 @@ export default function Home() {
       {/* 3D layer */}
       <div className="absolute inset-0 z-0">
         <Lanyard
-          frontImage="/lanyard/avatar.jpg"
-          backImage={
-            theme === "dark"
-              ? "/lanyard/back-image-dark.jpg"
-              : "/lanyard/back-image-light.jpg"
-          }
+          frontImage={avatar.src}
+          backImage={theme === "dark" ? backImageDark.src : backImageLight.src}
           cardColor={theme === "dark" ? "#111111" : "#ffffff"}
           anchor={isMobile ? "center" : "right"}
           size={isMobile ? 0.4 : 0.6}
