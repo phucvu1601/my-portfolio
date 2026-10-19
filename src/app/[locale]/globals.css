@@ -46,11 +46,33 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-  /* Custom properties */
+  /* === Custom properties === */
+  /* Common colors */
+  --color-brand: var(--brand);
+  --color-shadow: var(--shadow);
+  /* Color for background */
   --color-bg-glow: var(--bg-glow);
   --color-primary-glow: var(--primary-glow);
   --color-secondary-glow: var(--secondary-glow);
-  --color-brand: var(--brand);
+  /* Animation properties */
+  --animate-swing: swing 2.5s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s infinite;
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes swing {
+    0%,
+    100% {
+      transform: rotate(-10deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+  }
 }
 
 :root {
@@ -86,10 +108,11 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --brand: oklch(60.922% 0.11048 221.898);
+  --shadow: oklch(55.385% 0.00245 15.817 / 0.1);
   --bg-glow: oklch(95.53% 0.02165 280.249);
   --primary-glow: oklch(0.7569 0.1011 227.23);
   --secondary-glow: oklch(0.8724 0.0462 359.27);
-  --brand: oklch(0.3702 0.0642 215.26);
 }
 
 .dark {
@@ -124,10 +147,11 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --brand: oklch(0.8683 0.0711 210.59);
+  --shadow: oklch(1 0 0 / 10%);
   --bg-glow: oklch(0.1562 0.0588 268.52);
   --primary-glow: oklch(0.405222 0.100578 244.3203);
   --secondary-glow: oklch(0.3088 0.094 348.26);
-  --brand: oklch(0.8683 0.0711 210.59);
 }
 
 @layer base {
@@ -177,4 +201,24 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Animation Shimmer */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Animation Đu đưa (Swing) như dây đeo thật */
+
+/* Animation Trôi nổi (Float) bồng bềnh lên xuống */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }

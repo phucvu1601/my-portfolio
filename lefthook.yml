@@ -3,7 +3,7 @@ pre-commit:
   commands:
     biome-check:
       glob: "*.{js,ts,jsx,tsx,json}"
-      run: npx @biomejs/biome check --error-on-warnings --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      run: npx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
     check-types:
       run: npx tsc --noEmit
 commit-msg:

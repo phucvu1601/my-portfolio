@@ -31,7 +31,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => scrollToSection("home")}
-          className="text-gradient-brand text-lg font-bold transition-all duration-300 hover:scale-105 hover:brightness-120 sm:text-xl"
+          className="text-gradient-brand text-lg font-bold transition-all duration-300 hover:scale-105 dark:hover:brightness-120 hover:brightness-90 sm:text-xl"
         >
           PHUC VU
         </button>

@@ -25,8 +25,11 @@ export function LocaleSelector() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="bg-bg-glow">
+      <DropdownMenuTrigger
+        asChild
+        className="data-[state=open]:bg-primary-glow/30 data-[state=open]:text-brand"
+      >
+        <Button variant="ghostOutline" size="icon">
           <Globe />
         </Button>
       </DropdownMenuTrigger>
@@ -34,15 +37,17 @@ export function LocaleSelector() {
       <DropdownMenuContent
         align="end"
         sideOffset={4}
-        className="bg-background w-32"
+        className="bg-transparent w-32"
       >
         {LOCALES_AVAILABLE.map((l) => (
           <DropdownMenuItem
             key={l}
             onClick={() => changeLocale(l)}
             className={cn(
-              "flex cursor-pointer justify-between",
-              l === locale ? "bg-accent font-medium" : "",
+              "flex cursor-pointer justify-between focus:bg-accent/80 focus:text-brand not-data-[variant=destructive]:focus:**:text-brand",
+              l === locale
+                ? "bg-accent/80 text-brand hover:text-brand font-medium"
+                : "",
             )}
           >
             {l.toUpperCase()}
